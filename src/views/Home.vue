@@ -33,11 +33,11 @@ export default {
   font-size: 15px
   display: flex
   flex-direction: column
-.content
-  flex-grow: 1
-  min-height: 400px
-.name
-  margin-top: 30px
-  font-size: 2.5rem
-  color: white
+  .content
+    flex-grow: 1
+    min-height: 400px
+    .name
+      margin-top: 30px
+      font-size: 2.5rem
+      color: white
 </style>

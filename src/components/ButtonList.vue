@@ -37,16 +37,14 @@ export default {
     height: $box-size
     width: $box-size
     line-height: $box-size
-    margin:  10px 20px
+    margin: 10px 20px
     @include flex-center
     a
       @include flex-center
-      color: unset
       text-decoration: none
       width: 100%
       height: 100%
-      &:visited
-        color: unset
+      @include default-a
     img
       width: 60%
       height: 60%

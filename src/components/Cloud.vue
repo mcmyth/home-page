@@ -51,11 +51,9 @@ $cloud-height: 60px
   color: #555
   @include flex-center
   a
-    color: unset
     text-decoration: none
     font-size: .9rem
-    &:visited
-      color: unset
+    @include default-a
 @keyframes float
   0%
     transform: translateY(0)

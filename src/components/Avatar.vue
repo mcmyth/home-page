@@ -15,6 +15,8 @@ export default {
 <style lang="sass" scoped>
 @import "src/assets/style/global"
 $avatar-size: 200px
+$ripple-color: white
+$border-color: white
 .container
   display: inline-block
   padding: 70px 0 20px 0
@@ -25,9 +27,9 @@ $avatar-size: 200px
   max-height: $avatar-size
   margin: 0 auto
   border-radius: 50%
-  border: white 5px solid
   overflow: hidden
-  background-color: white
+  border: $border-color 5px solid
+  background-color: $border-color
   animation: at-ripple 1.5s linear infinite
   @include flex-center
   img
@@ -36,11 +38,11 @@ $avatar-size: 200px
 
 @keyframes at-ripple
   0%
-    box-shadow: 0 4px 10px rgba(#ffffff,0.1), 0 0 0 0 rgba(#ffffff,0), 0 0 0 5px rgba(#ffffff,0), 0 0 0 10px rgba(#ffffff,0)
+    box-shadow: 0 4px 10px rgba($ripple-color,0.1), 0 0 0 0 rgba($ripple-color,0), 0 0 0 5px rgba($ripple-color,0), 0 0 0 10px rgba($ripple-color,0)
   50%
-    box-shadow: 0 4px 10px rgba(#ffffff,0.1), 0 0 0 0 rgba(#ffffff,0.2), 0 0 0 10px rgba(#ffffff,0.2), 0 0 0 25px rgba(#ffffff,0.2)
+    box-shadow: 0 4px 10px rgba($ripple-color,0.1), 0 0 0 0 rgba($ripple-color,0.2), 0 0 0 10px rgba($ripple-color,0.2), 0 0 0 25px rgba($ripple-color,0.2)
   100%
-    box-shadow: 0 4px 10px rgba(#ffffff,0.0), 0 0 0 0 rgba(#ffffff,0.0), 0 0 0 18px rgba(#ffffff,0.0), 0 0 0 45px rgba(#ffffff,0.0)
+    box-shadow: 0 4px 10px rgba($ripple-color,0.0), 0 0 0 0 rgba($ripple-color,0.0), 0 0 0 18px rgba($ripple-color,0.0), 0 0 0 45px rgba($ripple-color,0.0)
 @keyframes jump
   0%
     transform: translateY(0)
