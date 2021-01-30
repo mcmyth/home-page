@@ -2,10 +2,10 @@
   <div class="button-list">
     <div class="container">
       <ul>
-        <li><a target="_blank" href="https://jq.qq.com/?_wv=1027&k=24hAeviP"><img src="/assets/icon/qq.svg" alt="加入QQ群" title="加入QQ群"></a></li>
-        <li><a target="_blank" href="https://github.com/mcmyth"><img src="/assets/icon/github.svg" alt="Codepen个人主页" title="Github个人主页"></a></li>
-        <li><a target="_blank" href="https://codepen.io/MC_Myth"><img src="/assets/icon/codepen.svg" alt="Codepen个人主页" title="Codepen个人主页"></a></li>
-        <li><a target="_blank" href="https://blog.mc-myth.cn"><span title="博客">Blog</span></a></li>
+        <li><a rel="noopener" target="_blank" href="https://jq.qq.com/?_wv=1027&k=24hAeviP"><img src="/assets/icon/qq.svg" alt="加入QQ群" title="加入QQ群"></a></li>
+        <li><a rel="noopener" target="_blank" href="https://github.com/mcmyth"><img src="/assets/icon/github.svg" alt="Codepen个人主页" title="Github个人主页"></a></li>
+        <li><a rel="noopener" target="_blank" href="https://codepen.io/MC_Myth"><img src="/assets/icon/codepen.svg" alt="Codepen个人主页" title="Codepen个人主页"></a></li>
+        <li><a rel="noopener" target="_blank" href="https://blog.mc-myth.cn"><span title="博客">Blog</span></a></li>
       </ul>
     </div>
   </div>
