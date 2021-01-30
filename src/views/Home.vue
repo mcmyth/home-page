@@ -28,7 +28,10 @@ export default {
 .home
   width: 100%
   min-height: 100vh
-  background: linear-gradient(to bottom, #6be, #36c)
+  background: linear-gradient(-45deg, #23a6d5, #23d5ab, #36c, #8dcbf3) 0 50%
+  animation: gradientBG 20s ease infinite
+  animation-delay: 10s
+  background-size: 400% 400%
   font-family: 'Nunito Sans', sans-serif
   font-size: 15px
   display: flex
@@ -40,4 +43,12 @@ export default {
       margin-top: 30px
       font-size: 2.5rem
       color: white
+@keyframes gradientBG
+  0%
+    background-position: 0 50%
+  50%
+    background-position: 100% 50%
+  100%
+    background-position: 0 50%
+
 </style>

@@ -39,6 +39,10 @@ export default {
     line-height: $box-size
     margin: 10px 20px
     @include flex-center
+    box-shadow: 0 0 0 0 rgba(white,0)
+    transition: box-shadow .15s linear
+    &:hover, &:active
+      box-shadow: 0 0 0 10px rgba(white,.3)
     a
       @include flex-center
       text-decoration: none
