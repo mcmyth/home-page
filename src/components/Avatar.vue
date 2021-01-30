@@ -19,10 +19,10 @@ $avatar-size: 200px
   display: inline-block
   padding: 70px 0 20px 0
   box-sizing: border-box
-  margin: 0 20px
+  margin: 0 40px
 .avatar
-  width: $avatar-size
-  height: $avatar-size
+  max-width: $avatar-size
+  max-height: $avatar-size
   margin: 0 auto
   border-radius: 50%
   border: white 5px solid

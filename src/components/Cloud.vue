@@ -42,7 +42,8 @@ $cloud-height: 60px
       transform: translate(-50%, 32px)
   width: 100vw
 .footer
-  width: 100vw
+  width: 100%
+  word-break: break-all
   height: $cloud-height + 10px
   padding-top: $cloud-height - 40px
   box-sizing: border-box
