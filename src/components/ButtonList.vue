@@ -24,6 +24,8 @@ export default {
   min-width: 100%
   margin-top: 30px
 .container
+  max-width: 800px
+  margin: 0 auto
   ul
     padding: 0
     margin: 0
@@ -48,6 +50,7 @@ export default {
       text-decoration: none
       width: 100%
       height: 100%
+      -webkit-tap-highlight-color: rgba(255,0,0,0)
       @include default-a
     img
       width: 60%
