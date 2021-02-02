@@ -2,10 +2,12 @@
   <div class="button-list">
     <div class="container">
       <ul>
-        <li><a rel="noopener" target="_blank" href="https://jq.qq.com/?_wv=1027&k=24hAeviP"><img src="@/assets/icon/qq.svg" alt="加入QQ群" title="加入QQ群"></a></li>
-        <li><a rel="noopener" target="_blank" href="https://github.com/mcmyth"><img src="@/assets/icon/github.svg" alt="Codepen个人主页" title="Github个人主页"></a></li>
-        <li><a rel="noopener" target="_blank" href="https://codepen.io/MC_Myth"><img src="@/assets/icon/codepen.svg" alt="Codepen个人主页" title="Codepen个人主页"></a></li>
-        <li><a rel="noopener" target="_blank" href="https://blog.mc-myth.cn"><span title="博客">Blog</span></a></li>
+        <li v-for="(value, index) in list" :key="index">
+          <a rel="noopener" target="_blank" :href="value.link">
+            <img v-if="value.img" :src="value.img" :alt="value.title" :title="value.title">
+            <span :title="value.title" v-else>{{ value.text }}</span>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -13,7 +15,33 @@
 
 <script>
 export default {
-  name: 'ButtonList'
+  name: 'ButtonList',
+  data() {
+    return {
+      list: [
+        {
+          img: '/assets/icon/qq.svg',
+          title: 'QQ群',
+          link: 'https://jq.qq.com/?_wv=1027&k=24hAeviP'
+        },
+        {
+          img: '/assets/icon/github.svg',
+          title: 'Github',
+          link: 'https://github.com/mcmyth'
+        },
+        {
+          img: '/assets/icon/codepen.svg',
+          title: 'Codepen',
+          link: 'https://codepen.io/MC_Myth'
+        },
+        {
+          title: '博客',
+          text: 'Blog',
+          link: 'https://blog.mc-myth.cn'
+        }
+      ]
+    }
+  }
 }
 </script>
 
@@ -52,6 +80,10 @@ export default {
       height: 100%
       -webkit-tap-highlight-color: rgba(255,0,0,0)
       @include default-a
+    span
+      width: 80%
+      word-break: break-all
+      line-height: 1rem
     img
       width: 60%
       height: 60%
