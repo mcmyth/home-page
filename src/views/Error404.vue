@@ -47,117 +47,91 @@ export default {
 }
 </script>
 
-<style scoped>
-#error-page {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #F8F9FA;
-  font-size: 15px;
-  color: #555;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  background-size: cover;
-}
+<style lang="sass" scoped>
+$main-color: white
+$main-background-color: #4285F4
+#error-page
+  margin: 0
+  padding: 0
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  background-color: #F8F9FA
+  font-size: 15px
+  color: #555
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  background-size: cover
 
-a, a:visited {
-  color: #4285F4;
-  text-decoration: none;
-  cursor: pointer;
-}
+a, a:visited
+  color: $main-background-color
+  text-decoration: none
+  cursor: pointer
+  &:hover
+    text-decoration: underline
 
-a:hover {
-  text-decoration: underline;
-}
+#container
+  width: 90%
+  flex-grow: 1
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  #main
+    margin: 20px 0
+    padding: 20px
+    box-sizing: border-box
+    width: 100%
+  #back
+    border: none
+    cursor: pointer
+    border-radius: 5px
+    padding: 10px
+    margin: 15px 0
+    transition: all .3s ease-in-out
+    outline: none
+    background-color: $main-background-color
+    color: white
+    float: right
 
-#container {
-  width: 90%;
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
+.wrapper
+  max-width: 400px
+  margin: 0 auto
+  padding: 0 20px
+  width: 90%
+  box-sizing: border-box
+  #code
+    text-align: center
+    font-size: 2.5rem
+  #message
+    text-align: center
+    font-size: 1.2rem
+    color: #888888
+  #url
+    color: #b0b0b0
+    text-align: center
+    margin-top: 10px
+    word-break: break-all
+  #tips
+    clear: both
+  #help ul
+    padding: 0
+    margin: 0
+    text-align: left
+    li
+      margin: 5px
 
-#container #main {
-  margin: 20px 0;
-  padding: 20px;
-  box-sizing: border-box;
-  width: 100%;
-}
+.line
+  display: block
+  width: 95%
+  height: 1px
+  margin: 10px auto
+  background-color: #c6c6c6
 
-#container button {
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 15px 0;
-  background-color: transparent;
-  transition: all .3s ease-in-out;
-  outline: none;
-}
-
-#container #back {
-  background-color: #4285F4;
-  color: white;
-  float: right;
-}
-
-.wrapper {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 0 20px;
-  width: 90%;
-  box-sizing: border-box;
-}
-
-.line {
-  display: block;
-  width: 95%;
-  height: 1px;
-  margin: 10px auto;
-  background-color: #c6c6c6;
-}
-
-.wrapper #code {
-  text-align: center;
-  font-size: 2.5rem;
-}
-
-.wrapper #message {
-  text-align: center;
-  font-size: 1.2rem;
-  color: #888888;
-}
-
-.wrapper #url {
-  color: #b0b0b0;
-  text-align: center;
-  margin-top: 10px;
-  word-break: break-all;
-}
-
-.wrapper #help ul {
-  padding: 0;
-  margin: 0;
-  text-align: left;
-}
-
-.wrapper #help ul li {
-  margin: 5px;
-}
-
-.wrapper #tips {
-  clear: both;
-}
-
-#footer {
-  width: 100%;
-  text-align: center;
-  padding: 10px 0;
-}
+#footer
+  width: 100%
+  text-align: center
+  padding: 10px 0
 </style>
