@@ -8,7 +8,6 @@
     </div>
     <div class="footer">
 <!--      <span>© 2021 MC MYTH</span>-->
-<!--      <br />-->
       <a href="http://beian.miit.gov.cn">粤ICP备18035696号</a>
     </div>
   </div>
@@ -50,6 +49,7 @@ $cloud-height: 60px
   background-color: white
   color: #555
   @include flex-center
+  flex-direction: column
   a
     text-decoration: none
     font-size: .9rem
