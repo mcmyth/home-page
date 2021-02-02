@@ -1,21 +1,11 @@
 <template>
   <div id="app" v-cloak>
-    <router-view v-if="!invalidRoute"/>
-    <error404 v-else></error404>
+    <router-view/>
   </div>
 </template>
 <script>
-import Error404 from '@/components/Error404'
 export default {
-  name: 'App',
-  computed: {
-    invalidRoute () {
-      return !this.$route.matched || this.$route.matched.length === 0
-    }
-  },
-  components: {
-    Error404
-  }
+  name: 'App'
 }
 </script>
 <style lang="scss">

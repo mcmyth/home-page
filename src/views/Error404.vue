@@ -37,7 +37,8 @@ export default {
   },
   methods: {
     back() {
-      this.$router.go(-1)
+      window.location.href = document.referrer
+      this.$router.back()
     }
   },
   created() {
