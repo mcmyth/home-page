@@ -68,6 +68,7 @@ export default {
     width: $box-size
     line-height: $box-size
     margin: 10px 20px
+    font-weight: bold
     @include flex-center
     box-shadow: 0 0 0 0 rgba(white,0)
     transition: box-shadow .15s linear

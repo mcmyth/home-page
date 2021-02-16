@@ -24,6 +24,6 @@ body,html
   font-size: 15px
   color: #535353
   background-color: #ecf1f5
-  font-family: 'Segoe UI', Helvetica,  Arial, sans-serif
+  font-family: 'Segoe UI', Helvetica, Arial, sans-serif
 
 </style>
