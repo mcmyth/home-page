@@ -23,14 +23,7 @@ body,html
   margin: 0
   font-size: 15px
   color: #535353
-  background-color: #ececec
-  font-family: 'Segoe UI', Helvetica, Arial, sans-serif
+  background-color: #ecf1f5
+  font-family: 'Segoe UI', Helvetica,  Arial, sans-serif
 
-#nav
-  padding: 30px
-  a
-    font-weight: bold
-    color: #2c3e50
-    &.router-link-exact-active
-      color: #42b983
 </style>

@@ -10,7 +10,6 @@ const routes = [
   },
   {
     path: '*',
-    name: 'notfount',
     component: () => import('../views/Error404'),
     meta: {
       title: '404 NOT FOUND'
