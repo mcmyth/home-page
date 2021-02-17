@@ -9,6 +9,14 @@ const routes = [
     component: () => import('../views/Home.vue')
   },
   {
+    path: '/friend',
+    name: 'Friend',
+    component: () => import('../views/Friend'),
+    meta: {
+      title: 'Friend'
+    }
+  },
+  {
     path: '*',
     component: () => import('../views/Error404'),
     meta: {

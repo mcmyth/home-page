@@ -30,7 +30,8 @@ module.exports = {
       .init(Plugin => new Plugin({
         staticDir: path.join(__dirname, 'dist'),
         routes: [
-          '/'
+          '/',
+          '/friend'
         ],
         renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
           renderAfterDocumentEvent: 'render-event',
