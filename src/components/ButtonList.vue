@@ -3,7 +3,7 @@
     <div class="container">
       <ul>
         <li v-for="(value, index) in buttonList" :key="index">
-          <a rel="noopener" target="_blank" :href="value.link">
+          <a rel="noopener" :target="value._blank === false ? '' : '_blank'" :href="value.link">
             <img v-if="value.img" :src="value.img" :alt="value.title" :title="value.title">
             <span :title="value.title" v-else>{{ value.text }}</span>
           </a>

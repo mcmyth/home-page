@@ -24,7 +24,8 @@ export default {
     {
       title: '友情链接',
       text: '朋友们',
-      link: '/friend'
+      link: '/friend',
+      _blank: false
     }
   ],
   friendLink: [
