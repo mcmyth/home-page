@@ -8,14 +8,20 @@
     </div>
     <div class="footer">
 <!--      <span>© {{getYear}} MC MYTH</span>-->
-      <a href="http://beian.miit.gov.cn">粤ICP备18035696号</a>
+        <a href="http://beian.miit.gov.cn">{{ beian }}</a>
     </div>
   </div>
 </template>
 
 <script>
+import config from '@/config'
 export default {
   name: 'Cloud',
+  data() {
+    return {
+      beian: config.beian
+    }
+  },
   computed: {
     getYear () {
       return new Date().getFullYear()

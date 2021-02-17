@@ -1,8 +1,8 @@
 <template>
-  <div class="button-list">
+  <div class="button-list" role="navigation">
     <div class="container">
       <ul>
-        <li v-for="(value, index) in list" :key="index">
+        <li v-for="(value, index) in buttonList" :key="index">
           <a rel="noopener" target="_blank" :href="value.link">
             <img v-if="value.img" :src="value.img" :alt="value.title" :title="value.title">
             <span :title="value.title" v-else>{{ value.text }}</span>
@@ -14,32 +14,12 @@
 </template>
 
 <script>
+import config from '@/config'
 export default {
   name: 'ButtonList',
   data() {
     return {
-      list: [
-        {
-          img: '/assets/icon/qq.svg',
-          title: 'QQ群',
-          link: 'https://jq.qq.com/?_wv=1027&k=24hAeviP'
-        },
-        {
-          img: '/assets/icon/github.svg',
-          title: 'Github',
-          link: 'https://github.com/mcmyth'
-        },
-        {
-          img: '/assets/icon/codepen.svg',
-          title: 'Codepen',
-          link: 'https://codepen.io/MC_Myth'
-        },
-        {
-          title: '博客',
-          text: 'Blog',
-          link: 'https://blog.mc-myth.cn'
-        }
-      ]
+      buttonList: config.buttonList
     }
   }
 }
