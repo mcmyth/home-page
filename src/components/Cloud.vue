@@ -8,7 +8,7 @@
     </div>
     <div class="footer">
 <!--      <span>© {{getYear}} MC MYTH</span>-->
-        <a href="http://beian.miit.gov.cn">{{ beian }}</a>
+        <a target="_blank" href="http://beian.miit.gov.cn">{{ beian }}</a>
     </div>
   </div>
 </template>
@@ -61,6 +61,7 @@ $cloud-height: 60px
   color: #555
   @include flex-center
   flex-direction: column
+  font-weight: bold
   a
     text-decoration: none
     font-size: .9rem

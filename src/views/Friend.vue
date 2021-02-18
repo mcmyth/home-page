@@ -1,28 +1,29 @@
 <template>
   <div class="friend">
     <div class="title" role="navigation">
-      <router-link rel="noopener" to="/" title="返回主页" class="back"><svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-arrow-left fa-w-14"><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z" class=""></path></svg>
+      <router-link rel="noopener" to="/" title="返回主页" class="back">
+        <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-arrow-left fa-w-14"><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z" class=""></path></svg>
       </router-link>
       <span>Friends</span>
     </div>
     <div class="notice">
-      <b>Notice:</b><br/>网站图标获取自domain.xxx/favicon.ico,如果需添加或变更到此列表可以通过以下方式:<br/>
-      <a href="tencent://message/?uin=1440126177&Site=&Menu=yes">[通过QQ联系我]</a>&nbsp;
-      <a href="mailto:personnpc@gamil.com">[发送邮件]</a>&nbsp;
-      <a href="https://github.com/mcmyth/home-page">[在Github上提交PR]</a>
+      <b>Notice:</b><br/>网站图标获取自domain.xxx/favicon.ico,如需变更此列表可通过以下方式:<br/>
+      <a href="https://github.com/mcmyth/home-page/blob/main/src/config.js">[在Github上提交PR]</a>
+      <a href="tencent://message/?uin=1440126177&Site=&Menu=yes">[通过QQ联系我]</a>
+      <a href="mailto:personnpc@gamil.com">[发送邮件]</a>
     </div>
     <div class="list-container">
       <div class="list">
         <div class="card" v-for="(item,index) in friendLink" :key="index">
           <div class="name">{{ item.name }}</div>
           <div class="link">
-            <a :href="item.link"><img onerror="this.src = '/assets/icon/web.svg'" :src="item.link + '/favicon.ico'" alt="" class="favicon">{{ item.link }}</a>
+            <a target="_blank" :href="item.link"><img onerror="this.src = '/assets/icon/web.svg'" :src="item.link + '/favicon.ico'" alt="" class="favicon">{{ item.link }}</a>
           </div>
           <div class="description" v-if="item.description">{{ item.description }}</div>
         </div>
       </div>
     </div>
-    <div class="footer">{{ beian }}</div>
+    <div class="footer"><a target="_blank" href="http://beian.miit.gov.cn">{{ beian }}</a></div>
   </div>
 </template>
 
@@ -41,6 +42,7 @@ export default {
 
 <style lang="sass" scoped>
 @import "src/assets/style/global"
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap')
 $main-color: #128ff2
 $vice-color: #59687f
 $bg-color: white
@@ -61,6 +63,7 @@ $page-width: 80vw
       @include default-a
       color: #128ff2 !important
       display: inline-block
+      margin: 0 5px
       &:hover
         text-decoration: underline
 .title
@@ -148,6 +151,13 @@ $page-width: 80vw
         &:hover
           color: $main-color !important
 .footer
+  font-size: 0.9rem
   height: 50px
   line-height: 50px
+  background-color: #fff
+  border-top: 1px solid #e2e2e2
+  font-weight: bold
+  font-family: 'Nunito Sans', sans-serif
+  a
+    @include default-a
 </style>
