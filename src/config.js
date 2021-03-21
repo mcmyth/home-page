@@ -1,3 +1,4 @@
+console.log('此项目已在Github上开源：https://github.com/mcmyth/home-page')
 export default {
   beian: '粤ICP备18035696号',
   buttonList: [

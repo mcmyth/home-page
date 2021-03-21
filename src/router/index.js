@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import tool from '@/router/modules/tool'
 Vue.use(VueRouter)
 
 const routes = [
@@ -27,6 +28,9 @@ const routes = [
     }
   }
 ]
+
+// Router Modules
+tool(routes)
 
 const router = new VueRouter({
   mode: 'history',

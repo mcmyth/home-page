@@ -44,8 +44,8 @@ export default {
 @import "src/assets/style/global"
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap')
 $main-color: #128ff2
-$vice-color: #59687f
 $bg-color: white
+$vice-color: #59687f
 $edge-spacing: 20px
 $page-width: 80vw
 .friend
@@ -67,32 +67,9 @@ $page-width: 80vw
       &:hover
         text-decoration: underline
 .title
-  color: $bg-color
-  font-size: 1.7rem
-  font-family: Roboto, sans-serif
-  background-color: $main-color
-  width: 100%
-  height: 80px
-  line-height: 80px
-  box-shadow: 0 4px 0 rgb(red($main-color) green($main-color) #{blue($main-color)} / 30%)
-  position: relative
+  @include title
   .back svg
-    top: 50%
-    transform: translateY(-50%)
-    left: 10px
-    width: 25px
-    height: 25px
-    position: absolute
-    display: inline-block
-    vertical-align: middle
-    fill: white
-    padding: 10px
-    transition: background-color ease-in-out .3s
-    border-radius: 50%
-    background-color: rgba(white,.2)
-    &:hover, &:active
-      background-color: white
-      fill: $main-color
+    @include title-button-left
 .list-container
   flex-grow: 1
   .list
