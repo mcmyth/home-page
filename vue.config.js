@@ -31,7 +31,9 @@ module.exports = {
         staticDir: path.join(__dirname, 'dist'),
         routes: [
           '/',
-          '/friend'
+          '/friend',
+          '/tool',
+          '/tool/imageconverter'
         ],
         renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
           renderAfterDocumentEvent: 'render-event',
