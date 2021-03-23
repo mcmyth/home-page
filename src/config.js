@@ -23,6 +23,12 @@ export default {
       link: 'https://blog.mc-myth.cn'
     },
     {
+      title: '小工具',
+      text: '小工具',
+      link: '/tool',
+      _blank: false
+    },
+    {
       title: '友情链接',
       text: '朋友们',
       link: '/friend',

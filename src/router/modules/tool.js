@@ -3,12 +3,15 @@ export default function(router) {
     path: '/tool/',
     component: () => import('@/views/tool/Index'),
     meta: {
-      title: 'ImageConverter'
+      title: '小工具'
     },
     children: [
       {
         path: 'imageconverter',
-        component: () => import('@/views/tool/ImageConverter')
+        component: () => import('@/views/tool/ImageConverter'),
+        meta: {
+          title: '图片转换'
+        }
       }
     ]
   })

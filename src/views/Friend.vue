@@ -92,12 +92,9 @@ $page-width: 80vw
       min-width: auto
       width: 100%
     color: $vice-color
-    box-shadow: 5px 5px 0 rgb(0 0 0 / 5%)
-    transition: box-shadow .3s
+    @include base-shadow
     margin: 20px
     overflow: hidden
-    &:hover
-      box-shadow: 7px 7px 0 rgb(0 0 0 / 9%)
     .description
       padding: 10px
       text-align: center

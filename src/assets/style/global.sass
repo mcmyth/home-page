@@ -42,3 +42,9 @@
     background-color: white
     fill: $main-color
     color: $main-color
+
+@mixin base-shadow
+  box-shadow: 5px 5px 0 rgb(0 0 0 / 5%)
+  transition: box-shadow .3s
+  &:hover
+    box-shadow: 7px 7px 0 rgb(0 0 0 / 9%)
