@@ -14,7 +14,7 @@
       </ul>
     </div>
     <div class="view">
-      <router-view></router-view>
+      <router-view/>
     </div>
   </div>
 </div>

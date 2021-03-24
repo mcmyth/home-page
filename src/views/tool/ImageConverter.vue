@@ -2,10 +2,9 @@
 <div class="image-converter">
   <div class="wrap">
     <div class="control">
-      <div class="btn upload_btn">
-        选择图片<input @change="fileChange($event)" type="file" ref="fileList"/>
+      <div @click="$refs.fileList.click()" class="btn upload_btn">
+        选择图片
       </div>
-      <p v-show="filename" class="img_name">{{ filename }}</p>
       <div class="select">
         <select v-model="format" ref="format">
           <option v-for="(item, index) in formatList" :key="index" :value="index">{{ item }}格式</option>
@@ -14,9 +13,11 @@
       <div class="btn" id="start" @click="getImg">开始转换</div>
       <a @click="downloadFile($event)" href="javascript:void(0)" class="btn download" id="download">下载图片</a>
     </div>
-    <div v-show="imgURL">
-      预览：<br/>
-      <img id="imgShow" alt="preview"  :src="imgURL"/>
+    <div class="upload_tips">
+      <div v-show="imgURL && !filename">
+        <img id="imgShow" alt="preview"  :src="imgURL"/>
+      </div>
+      <input @change="fileChange($event)" type="file" ref="fileList"/><span v-if="!(imgURL && !filename)">{{ filename ? filename : '拖拽或选择文件上传...'}}</span>
     </div>
   </div>
 </div>
@@ -49,6 +50,7 @@ export default {
           image.src = e.target.result // base64数据
           image.onload = () => {
             this.imgURL = this.imgToCanvas(image).toDataURL(`image/${this.formatList[this.format]}`)
+            this.filename = undefined
           }
         }
         imgFile.readAsDataURL(this.$refs.fileList.files[0])
@@ -76,61 +78,91 @@ export default {
 }
 </script>
 
-<style scoped>
-.control {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 20px;
-}
-.btn {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 30px;
-  margin-right: 20px;
-  border-radius: 5px;
-  font-size: 12px;
-  color: #fff;
-  background: #0eaee2;
-  cursor: pointer;
-}
-.download {
-  text-decoration: none;
-}
-.upload_btn input {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  opacity: 0;
-  cursor: pointer;
-}
-.select {
-  margin-right: 20px;
-  width: 80px;
-  height: 30px;
-  padding: 0 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-select {
-  height: 100%;
-  outline: none;
-  border: none;
-  background: transparent;
-}
-.img_name {
-  min-width: 100px;
-  margin-right: 20px;
-}
-p {
-  margin: 5px 0;
-  font-size: 14px;
-}
+<style scoped lang="sass">
+.control
+  display: flex
+  align-items: center
+  text-align: center
+  margin-bottom: 20px
+  justify-content: center
+  flex-wrap: wrap
+  div, input
+    margin: 10px
 
+.btn
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 80px
+  height: 30px
+  border-radius: 5px
+  font-size: 12px
+  color: #fff
+  background: #0eaee2
+  cursor: pointer
+
+.download
+  text-decoration: none
+
+.upload_btn input
+  opacity: 0
+  pointer-events: none
+
+.select
+  margin-right: 20px
+  width: 80px
+  height: 30px
+  padding: 0 5px
+  border-radius: 5px
+  border: 1px solid #ccc
+
+select
+  height: 100%
+  outline: none
+  border: none
+  background: transparent
+
+.img_name
+  min-width: 100px
+  margin-right: 20px
+  text-overflow: ellipsis
+  max-width: 30px
+  overflow: hidden
+  white-space: nowrap
+
+.wrap
+  text-align: center
+  width: 100%
+  max-width: 600px
+  margin: 0 auto
+
+.upload_tips
+  width: 100%
+  max-width: 250px
+  height: 250px
+  background-color: #dddddd
+  margin: 0 auto
+  display: flex
+  align-items: center
+  justify-content: center
+  border-radius: 10px
+  user-select: none
+  overflow: hidden
+  position: relative
+  img
+    max-width: 100%
+    margin: 0 auto
+  span
+    word-break: break-word
+    width: 90%
+    margin: 0 auto
+  input
+    position: absolute
+    opacity: 0
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    display: block
 </style>
