@@ -51,7 +51,9 @@ export default {
     font-weight: bold
     @include flex-center
     box-shadow: 0 0 0 0 rgba(white,0)
-    transition: box-shadow .15s linear
+    transition: box-shadow .15s linear, transform 0.1s ease 0s
+    &:active
+      transform: scale(0.9)
     &:hover, &:active
       box-shadow: 0 0 0 10px rgba(white,.3)
     a

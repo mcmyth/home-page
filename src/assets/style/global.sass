@@ -1,3 +1,5 @@
+$main-color: #128ff2
+$font-color: #59687f
 @mixin flex-center
   display: flex
   justify-content: center
@@ -9,8 +11,8 @@
   &:visited
     color: unset
 
-@mixin title($bg-color: white, $main-color: #128ff2)
-  color: $bg-color
+@mixin title()
+  color: white
   font-size: 1.7rem
   font-family: Roboto, sans-serif
   background-color: $main-color
@@ -48,3 +50,26 @@
   transition: box-shadow .3s
   &:hover
     box-shadow: 7px 7px 0 rgb(0 0 0 / 9%)
+
+@mixin a
+  user-select: none
+  transition: color .3s ease-in-out
+  text-decoration: none
+  cursor: pointer
+  color: $font-color
+  &:hover
+    color: $main-color !important
+  &:visited
+    color: unset
+
+@mixin scale-button($border-color: #ebeff2)
+  margin-bottom: 10px
+  font-size: 1rem
+  border: 1px solid $border-color
+  border-radius: 8px
+  text-align: center
+  transition: transform 0.2s ease 0s, background-color 0.2s ease 0s
+  &:hover
+    background-color: rgba($main-color,0.1)
+  &:active
+    transform: scale(0.95)

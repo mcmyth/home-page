@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="avatar">
-      <img src="https://pro-file.xiaoheiban.cn/nol/91bb1e24-eb8e-4567-b903-7ad853af671b.png" alt="avatar">
+      <img src="https://m.360buyimg.com/babel/jfs/t1/204336/3/27161/10110/63441fdeEc5f47db7/6159bd68227093c7.png" alt="avatar">
     </div>
   </div>
 </template>

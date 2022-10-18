@@ -13,15 +13,18 @@
       <a href="mailto:personnpc@gamil.com">[发送邮件]</a>
     </div>
     <div class="list-container">
-      <div class="list">
-        <div class="card" v-for="(item,index) in friendLink" :key="index">
-          <div class="name">{{ item.name }}</div>
-          <div class="link">
-            <a target="_blank" :href="item.link"><img onerror="this.src = '/assets/icon/web.svg'" :src="item.link + '/favicon.ico'" alt="" class="favicon">{{ item.link }}</a>
+      <ul class="list">
+        <li :class="isActive === index ? 'card active' : 'card'" v-for="(item,index) in friendLink" :key="index">
+          <div class="name" @click="activeCard(index)">{{ item.name }}</div>
+          <div class="content">
+            <div class="link" v-for="(link,index) in item.link" :key="index" >
+              <a target="_blank" :href="link"><img onerror="this.src = '/assets/icon/web.svg'" :src="link + '/favicon.ico'" alt="" class="favicon">{{ link }}</a>
+            </div>
+            <div class="description" v-if="item.description">{{ item.description }}</div>
           </div>
-          <div class="description" v-if="item.description">{{ item.description }}</div>
-        </div>
-      </div>
+        </li>
+      </ul>
+      <div :class="isActive !== null ? 'bg active' : 'bg'" @click="activeCard(null)"></div>
     </div>
     <div class="footer"><a target="_blank" href="http://beian.miit.gov.cn">{{ beian }}</a></div>
   </div>
@@ -34,7 +37,13 @@ export default {
   data() {
     return {
       beian: config.beian,
-      friendLink: config.friendLink
+      friendLink: config.friendLink,
+      isActive: null
+    }
+  },
+  methods: {
+    activeCard (index) {
+      this.isActive = index === this.isActive ? null : index
     }
   }
 }
@@ -75,12 +84,28 @@ $page-width: 80vw
   .list
     width: 100%
     justify-content: center
-    align-items: center
+    align-items: flex-start
     text-align: left
     display: flex
     flex-wrap: wrap
     max-width: $page-width
     margin: 0 auto
+    padding: 0
+  .bg
+    pointer-events: none
+    display: block
+    position: fixed
+    background-color: black
+    opacity: 0
+    width: 100vw
+    height: 100vh
+    z-index: 0
+    left: 0
+    top: 0
+    transition: opacity .3s ease-in-out
+    &.active
+      pointer-events: unset
+      opacity: 30%
   .card
     $border-color: #ebeff2
     $card-width: 350px
@@ -88,29 +113,52 @@ $page-width: 80vw
     border-radius: 8px
     min-width: 300px
     word-break: break-all
+    position: relative
+    @keyframes jump
+      0%
+        opacity: 0
+      50%
+        opacity: 0
+      100%
+        opacity: 1
+        position: fixed
     @media screen and (max-width: $card-width + 100px)
       min-width: auto
       width: 100%
     color: $vice-color
     @include base-shadow
-    margin: 20px
+    margin: 15px
     overflow: hidden
     .description
       padding: 10px
       text-align: center
       background-color: darken($bg-color, 3%)
+      border-radius: 8px
     .name
       font-size: 1.2rem
-      margin-bottom: 10px
       text-align: center
       padding: 15px 30px
-      border-bottom: 1px solid $border-color
+      @include a
+    .content
+      //display: none
+      max-height: 0
+      transition: all .2s ease-in-out
+      @keyframes jump2
+        0%
+          display: none
+        100%
+          display: block
+    &.active
+      z-index: 3
+      .name
+        border-bottom: 1px solid $border-color
+      .content
+        transition: max-height .3s linear
+        //display: block
+        max-height: 300px
+        padding: 10px
     .link
-      font-size: 1rem
-      margin: 10px
-      border: 1px solid $border-color
-      border-radius: 5px
-      text-align: center
+      @include scale-button($border-color)
       .favicon
         width: 20px
         height: 20px
@@ -120,10 +168,7 @@ $page-width: 80vw
       a
         padding: 15px 20px
         display: block
-        @include default-a
-        transition: color .3s
-        &:hover
-          color: $main-color !important
+        @include a
 .footer
   font-size: 0.9rem
   height: 50px

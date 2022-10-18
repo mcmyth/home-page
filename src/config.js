@@ -38,31 +38,36 @@ export default {
   friendLink: [
     {
       name: 'Ray',
-      link: 'https://www.r-ay.cn',
+      link: ['https://www.r-ay.cn'],
       description: '勿忘初心 方得始终'
     },
     {
       name: 'Lxns',
-      link: 'https://blog.lxns.org',
+      link: ['https://blog.lxns.org', 'https://lxns.net'],
       description: 'Lxns牛逼'
     },
     {
       name: 'Lime',
-      link: 'https://limecho.net',
+      link: ['https://limecho.net'],
       description: 'Here are for you'
     },
     {
       name: 'LittleC',
-      link: 'https://ltlec.com',
+      link: ['https://ltlec.com'],
       description: 'Material Design好'
     },
     {
       name: 'yanshiqwq',
-      link: 'http://blog.yanshiqwq.ml/'
+      link: ['http://blog.yanshiqwq.ml/']
     },
     {
       name: 'Undefined',
-      link: 'https://undefined.moe'
+      link: ['https://undefined.moe']
+    },
+    {
+      name: '悠静',
+      link: ['https://www.mikuhl.cn/'],
+      description: '一位很漂亮的小姐姐'
     }
   ]
 }
