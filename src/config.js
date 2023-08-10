@@ -1,11 +1,11 @@
 console.log('此项目已在Github上开源：https://github.com/mcmyth/home-page')
 export default {
-  beian: '粤ICP备18035696号',
+  beian: '粤ICP备18035696号-1',
   buttonList: [
     {
       img: '/assets/icon/qq.svg',
       title: 'QQ群',
-      link: 'https://jq.qq.com/?_wv=1027&k=24hAeviP'
+      link: 'https://qm.qq.com/cgi-bin/qm/qr?k=RXZ4vtO4rWdOH4zn8S5YQe7uCnevixTM'
     },
     {
       img: '/assets/icon/github.svg',
@@ -66,8 +66,7 @@ export default {
     },
     {
       name: '悠静',
-      link: ['https://www.mikuhl.cn/'],
-      description: '一位很漂亮的小姐姐'
+      link: ['https://www.mikuhl.cn/']
     }
   ]
 }
